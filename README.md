@@ -33,7 +33,7 @@ The sadam Library uses the Creative Commons Attribution-NonCommercial-ShareAlike
 
 ## License
 
-Copyright (c) 2020 Alex Taylor. Released under MIT. See the LICENSE file for more details.
+Copyright (c) 2020 Alex Taylor. Released under Creative Commons Zero v1.0 Universal. See the LICENSE file for more details.
 
 ## Questions
 
