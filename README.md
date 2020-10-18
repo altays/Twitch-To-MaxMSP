@@ -9,17 +9,13 @@
 
 This project utilizes the [Twitch Messaging Interface package](https://github.com/tmijs/tmi.js), the [datagram](https://nodejs.org/api/dgram.html) module in NodeJS, and the sadam library by [Ádám Siska](http://www.sadam.hu/) to pull messages from Twitch and present them in a readable form in Max/MSP
 
-***
-
 ## Table of Contents
-
 
 1. [Installation](#Installation)
 2. [Usage](#Usage)
 3. [License](#License)
 4. [Questions](#Questions)
 5. [Acknowledgements](#Acknowledgements)
-
 
 ***
 
@@ -31,19 +27,13 @@ Be sure to install the [sadam library](http://www.sadam.hu/hu/node/1), create an
 
 To start up the app, use npm run start and open up the max/msp patch.
 
-***
-
 ## Usage
 
 The sadam Library uses the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License, except for [sadam.lzo], which is a GPLv2 project. 
 
-***
-
 ## License
 
 Copyright (c) 2020 Alex Taylor. Released under MIT. See the LICENSE file for more details.
-
-***
 
 ## Questions
 
