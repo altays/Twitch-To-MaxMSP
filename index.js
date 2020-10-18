@@ -1,8 +1,21 @@
 const tmi = require('tmi.js');
+const dgram = require('dgram');
+const server = dgram.createSocket('udp4');
+
+const sendPort = 41234;
 
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
 }
+
+// UDP server 
+
+server.on('error', (err) => {
+    console.log(`server error:\n${err.stack}`);
+    server.close();
+});
+  
+// Twitch bot
 
 // Define configuration options
 const opts = {
@@ -18,22 +31,24 @@ const opts = {
 // Create a client with our options
 const client = new tmi.client(opts);
 
-client.on('message', onMessageHandler);
-client.on('connected', onConnectedHandler)
-
 function onMessageHandler (channel, tags, message, self) {
-    // channel provides channel name
-    // tags provides any flags on the user
-    // message provides the message recieved
-    // self
 	if(self || !message.startsWith('!')) return;
 
 	const args = message.slice(1).split(' ');
     const command = args.shift().toLowerCase();
     
 	if(command === 'echo') {
-        // client.say(channel, `@${tags.username}, you said: "${args.join(' ')}"`);
-        console.log(message)
+
+        let shortMessage = message.substring(6);
+        console.log(shortMessage)
+
+        server.send(shortMessage, sendPort, 'localhost', (err) => {
+            // server.close();
+        });
+    }
+    
+    if(command === 'info') {
+        client.say(channel, `This project utilizes TMIjs, Nodejs, and the sadam library of Max/MSP externals by Ádám Siska`);
 	}
 };
 
@@ -41,6 +56,8 @@ function onMessageHandler (channel, tags, message, self) {
 function onConnectedHandler (addr, port) {
     console.log(`* Connected to ${addr}:${port}`);
 }
+
+client.on('message', onMessageHandler);
+client.on('connected', onConnectedHandler)
         
-  
 client.connect();
