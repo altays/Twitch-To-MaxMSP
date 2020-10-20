@@ -48,7 +48,11 @@ function onMessageHandler (channel, tags, message, self) {
     }
     
     if(command === 'info') {
-        client.say(channel, `This project utilizes TMIjs, Nodejs, and the sadam library of Max/MSP externals by Ádám Siska`);
+        client.say(channel, `This project utilizes TMIjs, Nodejs, and the sadam library of Max/MSP externals by Ádám Siska. To see more of Alex's work, check out github.com/altays.`);
+    }
+    
+    if(command === 'help') {
+        client.say(channel, `Type !info to get info about this project, !echo to send a message`);
 	}
 };
 
