@@ -2,7 +2,7 @@ const tmi = require('tmi.js');
 const dgram = require('dgram');
 const server = dgram.createSocket('udp4');
 
-const sendPort = 41234;
+const sendPort = 9997;
 
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
@@ -43,17 +43,21 @@ function onMessageHandler (channel, tags, message, self) {
         console.log(shortMessage)
 
         server.send(shortMessage, sendPort, 'localhost', (err) => {
-            // server.close();
+            console.log(err)
         });
     }
     
     if(command === 'info') {
-        client.say(channel, `This project utilizes TMIjs, Nodejs, and the sadam library of Max/MSP externals by Ádám Siska. To see more of Alex's work, check out github.com/altays.`);
+        client.say(channel, `This project utilizes TMIjs, Nodejs, and the sadam library of Max/MSP externals by Ádám Siska. Check out the repo at https://github.com/altays/Twitch-To-MaxMSP`);
     }
     
     if(command === 'help') {
         client.say(channel, `Type !info to get info about this project, !echo to send a message`);
-	}
+    }
+    
+    if(command === 'test') {
+        client.action(channel,`Hey this is a test message`)
+    }
 };
 
 // Called every time the bot connects to Twitch chat
