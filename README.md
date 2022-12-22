@@ -15,7 +15,6 @@ This project utilizes the [Twitch Messaging Interface package](https://github.co
 2. [Usage](#Usage)
 3. [License](#License)
 4. [Questions](#Questions)
-5. [Acknowledgements](#Acknowledgements)
 
 ***
 
