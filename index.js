@@ -37,9 +37,9 @@ function onMessageHandler (channel, tags, message, self) {
 	const args = message.slice(1).split(' ');
     const command = args.shift().toLowerCase();
     
-	if(command === 'echo') {
+	if(command === 'say') {
 
-        let shortMessage = message.substring(6);
+        let shortMessage = message.substring(5);
         console.log(shortMessage)
 
         server.send(shortMessage, sendPort, 'localhost', (err) => {
@@ -52,12 +52,12 @@ function onMessageHandler (channel, tags, message, self) {
     }
     
     if(command === 'help') {
-        client.say(channel, `Type !info to get info about this project, !echo to send a message`);
+        client.say(channel, `Type !info to get info about this project, !say to send a message`);
     }
     
-    if(command === 'test') {
-        client.action(channel,`Hey this is a test message`)
-    }
+    // if(command === 'test') {
+    //     client.action(channel,`Hey this is a test message`)
+    // }
 };
 
 // Called every time the bot connects to Twitch chat
