@@ -33,9 +33,3 @@ The sadam Library uses the Creative Commons Attribution-NonCommercial-ShareAlike
 ## License
 
 Copyright (c) 2020 Alex Taylor. Released under Creative Commons Zero v1.0 Universal. See the LICENSE file for more details.
-
-## Questions
-
-For any questions, please contact the owner at altays633@gmail.com
-
-![](https://avatars.githubusercontent.com/u/12203157?&s=200)
