@@ -1,10 +1,6 @@
 
 # Twitch-To-MaxMSP
 
-![NODE-MAX/MSP](https://img.shields.io/badge/NODE-MAX/MSP-green)
-
-***
-
 ## Description
 
 This project utilizes the [Twitch Messaging Interface package](https://github.com/tmijs/tmi.js), the [datagram](https://nodejs.org/api/dgram.html) module in NodeJS, and the sadam library by [Ádám Siska](http://www.sadam.hu/) to pull messages from Twitch and present them in a readable form in Max/MSP
